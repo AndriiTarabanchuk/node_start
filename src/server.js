@@ -13,13 +13,13 @@ const PORT = env(env('PORT'), '3000');
 export const startServer = () => {
   const app = express();
 
-  app.use(
-    pino({
-      transport: {
-        target: 'pino-pretty',
-      },
-    }),
-  );
+  // app.use(
+  //   pino({
+  //     transport: {
+  //       target: 'pino-pretty',
+  //     },
+  //   }),
+  // );
 
   app.use(cors());
 
@@ -31,10 +31,10 @@ export const startServer = () => {
     });
   });
 
-  app.get('/students', async (req, res) => {
-    const students = await studentService.getAllStudents();
-    res.status(200).json({ data: students });
-  });
+  // app.get('/students', async (req, res) => {
+  //   const students = await studentService.getAllStudents();
+  //   res.status(200).json({ data: students });
+  // });
 
   // app.get('/students/:studentId', async (req, res, next) => {
   //   const { studentId } = res.params;
